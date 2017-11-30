@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    html,body{
+        background:black;
+        overflow: hidden;
+    }
+    div{
+        background: yellow;
+        margin:0 auto;
+        width:600px;
+        height:600px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <canvas id="canvas" width="600" height="600"></canvas>
+        <script>
+        var canvas = document.querySelector('#canvas');
+        var ctx = canvas.getContext('2d');
+        var data = {
+            head:{
+                x:100,
+                y:100
+            },
+            body:[
+                {x:80,y:100},
+                {x:60,y:100}
+            ]
+        }
+        ctx.fillRect(data.head.x,data.head.y,20,20);
+        for(var i=0;i<data.body.length;i++){
+            ctx.fillRect(data.body[i].x,data.body[i].y,20,20);
+        }
+        </script>
+    </div>
+</body>
+</html>
